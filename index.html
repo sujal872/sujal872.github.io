@@ -1,760 +1,210 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SUJAL | Cybersecurity Analyst</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root[data-theme="dark"] {
-      --bg-primary: #0d0d00;
-      --bg-secondary: #111100;
-      --bg-card: #181800;
-      --bg-card-hover: #1e1e00;
-      --border: #2e2a00;
-      --border-glow: #ffd60033;
-    
-      --text-primary: #fff8e0;
-      --text-secondary: #b0a060;
-      --text-muted: #5a5020;
-      --accent:  #ffd600;
-      --accent2: #39ff14;
-      --accent3: #ff4500;
-      --accent4: #ff8c00;
-      --accent5: #ff1a1a;
-      --accent-glow: 0 0 22px #ffd60055;
-      --accent2-glow: 0 0 22px #39ff1455;
-      --nav-bg: #0d0d00ee;
-      --shadow: 0 8px 32px #00000099;
-      --scan-line: rgba(255,214,0,0.025);
-    }
-    
-    :root[data-theme="dark"] { 
-  --bg-primary: #07120b;
-  --bg-secondary: #0b1b11;
-  --bg-card: #102417;
-  --bg-card-hover: #16301f;
-
-  --border: #1f4d2e;
-  --border-glow: #39ff1440;
-
-  --text-primary: #eaffea;
-  --text-secondary: #8fd99b;
-  --text-muted: #4f7a59;
-
-  --accent: #39ff14;
-  --accent2: #00ff99;
-  --accent3: #00c853;
-  --accent4: #64ffda;
-  --accent5: #76ff03;
-
-  --accent-glow: 0 0 22px #39ff1455;
-  --accent2-glow: 0 0 22px #00ff9955;
-
-  --nav-bg: #07120bee;
-
-  --shadow: 0 8px 32px #00000099;
-
-  --scan-line: rgba(57,255,20,0.03);
-}
-
-   :root[data-theme="dark"] {
-      --bg-primary: #0a0d12;
-      --bg-secondary: #0f1318;
-      --bg-card: #131820;
-      --bg-card-hover: #161d27;
-      --border: #1e2a38;
-      --border-glow: #00d4ff33;
-      --text-primary: #e8f0f8;
-      --text-secondary: #7a8fa6;
-      --text-muted: #455568;
-      --accent: #00d4ff;
-      --accent2: #00ff88;
-      --accent3: #ff6b35;
-      --accent-glow: 0 0 20px #00d4ff44;
-      --accent2-glow: 0 0 20px #00ff8844;
-      --nav-bg: #0a0d12ee;
-      --shadow: 0 8px 32px #00000088;
-      --scan-line: rgba(0,212,255,0.03);
-    }
-
-    :root[data-theme="light"] {
-      --bg-primary: #fffbea;
-      --bg-secondary: #fff3c0;
-      --bg-card: #ffffff;
-      --bg-card-hover: #fffde8;
-      --border: #e8d060;
-      --border-glow: #ffd60033;
-      --text-primary: #1a1400;
-      --text-secondary: #5a4800;
-      --text-muted: #9a8840;
-      --accent:  #cc9900;
-      --accent2: #1a7a00;
-      --accent3: #cc2200;
-      --accent4: #cc5500;
-      --accent5: #cc0000;
-      --accent-glow: 0 0 20px #ffd60044;
-      --accent2-glow: 0 0 20px #1a7a0044;
-      --nav-bg: #fffbeaee;
-      --shadow: 0 8px 32px #00000018;
-      --scan-line: transparent;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      overflow-x: hidden;
-      transition: background 0.4s, color 0.4s;
-    }
-
-    /* Scan lines effect (dark only) */
-    body::before {
-      content: '';
-      position: fixed; inset: 0; pointer-events: none; z-index: 0;
-      background: repeating-linear-gradient(0deg, var(--scan-line) 0px, transparent 1px, transparent 3px);
-    }
-
-    /* ── NAVBAR ── */
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 1000;
-      background: var(--nav-bg);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 0;
-      transition: background 0.4s, border-color 0.4s;
-    }
-    .nav-brand {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 1.15rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 2px;
-    }
-    .nav-brand span { color: var(--text-secondary); }
-    .nav-link-custom {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 4px;
-      transition: color 0.2s, background 0.2s;
-    }
-    .nav-link-custom:hover { color: var(--accent); background: var(--border-glow); }
-    .theme-toggle {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--accent);
-      width: 38px; height: 38px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .theme-toggle:hover { border-color: var(--accent); box-shadow: var(--accent-glow); }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 100px 0 60px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-grid-bg {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: 0.3;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent);
-    }
-    .hero-accent-circle {
-      position: absolute; border-radius: 50%; pointer-events: none;
-      filter: blur(80px); opacity: 0.12;
-    }
-    .circle-1 { width: 500px; height: 500px; background: var(--accent); top: -100px; right: -100px; }
-    .circle-2 { width: 300px; height: 300px; background: var(--accent3); bottom: 0; left: 10%; }
-    .circle-3 { width: 180px; height: 180px; background: var(--accent2); bottom: 20%; right: 5%; }
-
-    .hero-tag {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.82rem;
-      color: var(--accent);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      border: 1px solid var(--border-glow);
-      background: var(--border-glow);
-      padding: 6px 16px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 24px;
-    }
-    .hero-name {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      font-weight: 700;
-      line-height: 1.05;
-      color: var(--text-primary);
-      margin-bottom: 14px;
-    }
-    .hero-name .accent { color: var(--accent); }
-    .hero-title {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-    }
-    .hero-title .blink {
-      color: var(--accent2);
-      animation: blink 1.1s step-end infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      max-width: 520px;
-      margin-bottom: 36px;
-    }
-    .btn-primary-custom {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      background: var(--accent);
-      color: #0a0d12;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: all 0.2s;
-    }
-    .btn-primary-custom:hover {
-      background: #fff;
-      color: #0a0d12;
-      box-shadow: var(--accent-glow);
-      transform: translateY(-2px);
-    }
-    .btn-outline-custom {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      background: transparent;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 12px 30px;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: all 0.2s;
-    }
-    .btn-outline-custom:hover {
-      background: var(--border-glow);
-      box-shadow: var(--accent-glow);
-      transform: translateY(-2px);
-      color: var(--accent);
-    }
-
-    /* Stats */
-    .hero-stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 48px; }
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 1.8rem;
-      color: var(--accent);
-      display: block;
-    }
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* Terminal widget */
-    .terminal-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      font-family: 'Share Tech Mono', monospace;
-    }
-    .terminal-header {
-      background: var(--bg-secondary);
-      padding: 10px 16px;
-      display: flex; align-items: center; gap: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-    .dot { width: 12px; height: 12px; border-radius: 50%; }
-    .dot-r { background: #ff5f57; }
-    .dot-y { background: #febc2e; }
-    .dot-g { background: #28c840; }
-    .terminal-title { font-size: 0.75rem; color: var(--text-muted); margin-left: auto; }
-    .terminal-body { padding: 20px; font-size: 0.85rem; line-height: 1.9; }
-    .t-prompt { color: var(--accent2); }
-    .t-cmd { color: var(--text-primary); }
-    .t-output { color: var(--text-secondary); padding-left: 16px; }
-    .t-accent { color: var(--accent); }
-    .t-warn { color: var(--accent4); }
-
-    /* ── SECTIONS ── */
-    section { padding: 90px 0; }
-    .section-label {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--accent);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .section-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 14px;
-    }
-    .section-line {
-      width: 60px; height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent4), transparent);
-      border-radius: 2px;
-      margin-bottom: 48px;
-    }
-
-    /* ── ABOUT ── */
-    #about { background: var(--bg-secondary); }
-    .about-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      height: 100%;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .about-card:hover { border-color: var(--accent); box-shadow: var(--accent-glow); }
-    .about-card-icon {
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-    .about-card h5 {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .about-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; }
-
-    /* ── SKILLS ── */
-    .skill-category-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 18px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-    .skill-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.78rem;
-      padding: 6px 14px;
-      border-radius: 6px;
-      margin: 4px;
-      transition: all 0.2s;
-      cursor: default;
-    }
-    .skill-badge:hover { border-color: var(--accent); color: var(--accent); background: var(--border-glow); }
-    .skill-badge i { font-size: 0.75rem; }
-
-    /* ── PROJECTS ── */
-    #projects { background: var(--bg-secondary); }
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      height: 100%;
-      transition: all 0.3s;
-      position: relative;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent3), var(--accent2));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.3s;
-    }
-    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow), var(--accent-glow); border-color: var(--border-glow); }
-    .project-card:hover::before { transform: scaleX(1); }
-    .project-badge-bar { padding: 18px 20px 0; display: flex; gap: 8px; flex-wrap: wrap; }
-    .proj-cat {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.7rem;
-      padding: 3px 10px;
-      border-radius: 4px;
-      letter-spacing: 1px;
-    }
-    .cat-soc { background: #ffd60018; color: var(--accent);  border: 1px solid #ffd60044; }
-    .cat-py  { background: #39ff1418; color: var(--accent2); border: 1px solid #39ff1444; }
-    .cat-ai  { background: #ff450018; color: var(--accent3); border: 1px solid #ff450044; }
-    .project-body { padding: 18px 20px 22px; }
-    .project-body h5 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.15rem; font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 10px;
-    }
-    .project-body p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
-    .project-tech { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px; }
-    .tech-tag {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.72rem;
-      background: var(--bg-secondary);
-      color: var(--text-muted);
-      padding: 3px 10px;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-    }
-    .project-links { display: flex; gap: 10px; }
-    .proj-link {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 600;
-      font-size: 0.82rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 5px;
-      transition: opacity 0.2s;
-    }
-    .proj-link:hover { opacity: 0.7; color: var(--accent); }
-
-    /* ── CERTIFICATIONS ── */
-    .cert-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px 22px;
-      display: flex; align-items: center; gap: 18px;
-      transition: all 0.2s;
-      height: 100%;
-    }
-    .cert-card:hover { border-color: var(--accent); box-shadow: var(--accent-glow); }
-    .cert-icon {
-      width: 48px; height: 48px; border-radius: 10px;
-      background: var(--border-glow);
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent); font-size: 1.3rem; flex-shrink: 0;
-    }
-    .cert-info h6 {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700; font-size: 0.95rem;
-      color: var(--text-primary); margin-bottom: 3px;
-    }
-    .cert-info span { font-size: 0.78rem; color: var(--text-muted); font-family: 'Share Tech Mono', monospace; }
-
-    /* ── EXPERIENCE ── */
-    #experience { background: var(--bg-secondary); }
-    .timeline-item { position: relative; padding-left: 36px; margin-bottom: 40px; }
-    .timeline-item::before {
-      content: '';
-      position: absolute; left: 0; top: 6px; bottom: -40px;
-      width: 2px; background: var(--border);
-    }
-    .timeline-item:last-child::before { display: none; }
-    .timeline-dot {
-      position: absolute; left: -5px; top: 6px;
-      width: 12px; height: 12px; border-radius: 50%;
-      background: var(--accent);
-      border: 2px solid var(--bg-primary);
-      box-shadow: 0 0 10px var(--accent);
-    }
-    .timeline-date {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.75rem; color: var(--accent); letter-spacing: 2px;
-      margin-bottom: 6px;
-    }
-    .timeline-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700; font-size: 1.1rem;
-      color: var(--text-primary); margin-bottom: 2px;
-    }
-    .timeline-company { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 10px; }
-    .timeline-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
-    .timeline-desc li { margin-bottom: 4px; }
-
-    /* ── CONTACT ── */
-    .contact-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      text-align: center;
-      transition: all 0.2s;
-      text-decoration: none;
-      display: block;
-    }
-    .contact-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--accent-glow);
-      transform: translateY(-4px);
-    }
-    .contact-card i { font-size: 1.6rem; color: var(--accent); margin-bottom: 12px; display: block; }
-    .contact-card h6 {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700; font-size: 0.9rem;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--text-primary); margin-bottom: 4px;
-    }
-    .contact-card span { font-size: 0.82rem; color: var(--text-secondary); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-      padding: 28px 0;
-      text-align: center;
-    }
-    footer p { font-size: 0.82rem; color: var(--text-muted); font-family: 'Share Tech Mono', monospace; }
-    footer span { color: var(--accent); }
-
-    /* ── ANIMATIONS ── */
-    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s, transform 0.6s; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg-primary); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
-
-    @media (max-width: 768px) {
-      .hero-stats { gap: 20px; }
-      .stat-num { font-size: 1.4rem; }
-    }
-  
-
-.cert-preview embed{
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.cert-info h6{
-    margin-bottom:5px;
-}
-
-.cert-info span{
-    color:#aaa;
-}
-  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <div class="container d-flex align-items-center justify-content-between">
-    <a href="#hero" class="nav-brand"><span>&gt;</span> soc<span>_</span>analyst</a>
-    <div class="d-none d-md-flex align-items-center gap-2">
-      <a href="#about"    class="nav-link-custom">About</a>
-      <a href="#skills"   class="nav-link-custom">Skills</a>
-      <a href="#projects" class="nav-link-custom">Projects</a>
-      <a href="#certs"    class="nav-link-custom">Certs</a>
-      <a href="#contact"  class="nav-link-custom">Contact</a>
-    </div>
-    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-      <i class="fas fa-moon" id="themeIcon"></i>
-    </button>
-  </div>
-</nav>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="#hero" class="nav-brand"><span>&gt;</span> soc<span>_</span>analyst</a>
+      <div class="d-none d-md-flex align-items-center gap-2">
+        <a href="#about" class="nav-link-custom">About</a>
+        <a href="#skills" class="nav-link-custom">Skills</a>
+        <a href="#projects" class="nav-link-custom">Projects</a>
+        <a href="#experience" class="nav-link-custom">Exp & Edu</a>
+        <a href="#certs" class="nav-link-custom">Certs</a>
+        <a href="#contact" class="nav-link-custom">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-accent-circle circle-1"></div>
-  <div class="hero-accent-circle circle-2"></div>
-  <div class="hero-accent-circle circle-3"></div>
-  <div class="container position-relative">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-6">
-        <div class="hero-tag"><i class="fas fa-shield-alt me-2"></i>Available for Opportunities</div>
-        <h1 class="hero-name"><span class="accent">SUJAL</span><br/></h1>
-        <div class="hero-title">
-          SOC L1 Analyst&nbsp;<span class="blink">|</span>&nbsp;Cybersecurity + AI
-        </div>
-        <p class="hero-desc">
-          Passionate about defending digital infrastructure. Skilled in threat detection, log analysis, incident response, and building AI-powered security tools using Python & Bash.
-        </p>
-        <div class="d-flex gap-3 flex-wrap">
-          <a href="./images/Sujal_InternshalaResume.pdf" download class="btn-primary-custom">
-            <i class="fas fa-download"></i> Download Resume
-          </a>
-          <a href="#projects" class="btn-outline-custom">
-            <i class="fas fa-code"></i> View Projects
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-num">10+</span>
-            <span class="stat-label">Projects</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">SOC</span>
-            <span class="stat-label">L1 Certified</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">AI</span>
-            <span class="stat-label">Security Focus</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">1+</span>
-            <span class="stat-label">Years Learning</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="terminal-box">
-          <div class="terminal-header">
-            <div class="dot dot-r"></div>
-            <div class="dot dot-y"></div>
-            <div class="dot dot-g"></div>
-            <span class="terminal-title">analyst@security:~</span>
-          </div>
-          <div class="terminal-body">
-            <div><span class="t-prompt">analyst@kali</span><span class="t-cmd"> ~</span><span class="t-prompt"> $ </span><span class="t-cmd">whoami</span></div>
-            <div class="t-output t-accent">SOC L1 Analyst | Cybersecurity + AI Enthusiast</div>
-            <br/>
-            <div><span class="t-prompt">analyst@kali</span><span class="t-cmd"> ~</span><span class="t-prompt"> $ </span><span class="t-cmd">skills --list</span></div>
-            <div class="t-output">▸ <span class="t-accent">SIEM</span>: Splunk, IBM QRadar, Wazuh</div>
-            <div class="t-output">▸ <span class="t-accent">Languages</span>: Python, Bash</div>
-            <div class="t-output">▸ <span class="t-accent">AI/ML</span>: Threat detection, LLMs</div>
-            <div class="t-output">▸ <span class="t-accent">Tools</span>: Wireshark, Nmap, Metasploit</div>
-            <br/>
-            <div><span class="t-prompt">analyst@kali</span><span class="t-cmd"> ~</span><span class="t-prompt"> $ </span><span class="t-cmd">status</span></div>
-            <div class="t-output"><span class="t-accent">[✓]</span> SOC L1 Complete &nbsp;<span class="t-warn">[ACTIVE]</span></div>
-            <div class="t-output"><span class="t-accent">[✓]</span> Cybersecurity + AI &nbsp;<span class="t-warn">[LEARNING]</span></div>
-            <div class="t-output"><span class="t-accent">[✓]</span> Open to Work &nbsp;<span class="t-accent">[TRUE]</span></div>
-          </div>
-        </div>
-      </div>
+    
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="fade-up">
-      <div class="section-label"># about.me</div>
-      <h2 class="section-title">About Me</h2>
-      <div class="section-line"></div>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-accent-circle circle-1"></div>
+    <div class="hero-accent-circle circle-2"></div>
+    <div class="hero-accent-circle circle-3"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="hero-tag"><i class="fas fa-shield-alt me-2"></i>Available for Opportunities</div>
+          <h1 class="hero-name"><span class="accent">SUJAL</span><br /></h1>
+          <div class="hero-title">
+            Aspiring SOC Analyst&nbsp;<span class="blink1">|</span>&nbsp;Cybersecurity & AI Enthusiast
+          </div>
+          <p class="hero-desc">
+            Passionate about defending digital infrastructure. Skilled in threat detection, log analysis, incident
+            response, and building AI-powered security tools using Python & Bash.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="./images/Sujal_InternshalaResume.pdf" download class="btn-primary-custom">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+            <a href="#projects" class="btn-outline-custom">
+              <i class="fas fa-code"></i> View Projects
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">4+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">SOC</span>
+              <span class="stat-label">L1 Certified</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">AI</span>
+              <span class="stat-label">Security Focus</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">1+</span>
+              <span class="stat-label">Years Learning</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+              <span class="terminal-title">analyst@security:~</span>
+            </div>
+            <div class="terminal-body">
+              <div><span class="t-prompt">analyst@kali</span><span class="t-cmd"> ~</span><span class="t-prompt"> $
+                </span><span class="t-cmd">whoami</span></div>
+              <div class="t-output t-accent">Aspiring SOC Analyst | Cybersecurity & AI Enthusiast</div>
+              <br />
+              <div><span class="t-prompt">analyst@kali</span><span class="t-cmd"> ~</span><span class="t-prompt"> $
+                </span><span class="t-cmd">skills --list</span></div>
+              <div class="t-output">▸ <span class="t-accent">SIEM</span>: Splunk</div>
+              <div class="t-output">▸ <span class="t-accent">Languages</span>: Python, Bash</div>
+              <!-- <div class="t-output">▸ <span class="t-accent">AI/ML</span>: Threat detection, LLMs</div> -->
+              <div class="t-output">▸ <span class="t-accent">Tools</span>: Wireshark, Nmap, Metasploit</div>
+              <br />
+              <div><span class="t-prompt">analyst@kali</span><span class="t-cmd"> ~</span><span class="t-prompt"> $
+                </span><span class="t-cmd">status</span></div>
+              <div class="t-output"><span class="t-accent">[✓]</span> SOC L1 Analyst Training &nbsp;<span
+                  class="t-accent">[CERTIFIED]</span></div>
+              <div class="t-output"><span class="t-accent">[✓]</span> Cybersecurity + AI Program &nbsp;<span
+                  class="t-accent">[CERTIFIED]</span></div>
+              <div class="t-output"><span class="t-accent">[✓]</span> Open to Work &nbsp;<span
+                  class="t-accent">[TRUE]</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row g-4 mb-5">
-      <div class="col-lg-8 fade-up">
-        <p style="color:var(--text-secondary);line-height:1.85;font-size:1.02rem;">
-          I'm a cybersecurity enthusiast who has completed SOC L1 training and is actively expanding expertise in AI-powered security. 
-          With hands-on experience in Python and Bash scripting, I build automation tools and security utilities that solve real-world problems. 
-          My passion lies at the intersection of <span style="color:var(--accent)">threat detection</span>, 
-          <span style="color:var(--accent2)">machine learning</span>, and <span style="color:var(--accent3)">incident response</span>.
-        </p>
-      </div>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3 fade-up">
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fas fa-search"></i></div>
-          <h5>Threat Detection</h5>
-          <p>Monitoring SIEM dashboards, analyzing alerts, and identifying indicators of compromise in real time.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 fade-up">
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fas fa-robot"></i></div>
-          <h5>AI in Security</h5>
-          <p>Building ML-powered tools for anomaly detection, log parsing, and automated threat classification.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 fade-up">
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fas fa-terminal"></i></div>
-          <h5>Scripting & Automation</h5>
-          <p>Writing Python and Bash scripts to automate repetitive security tasks, parsing logs, and reporting.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 fade-up">
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fas fa-fire-extinguisher"></i></div>
-          <h5>Incident Response</h5>
-          <p>Triaging alerts, documenting incidents, and coordinating containment steps following IR playbooks.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="fade-up">
-      <div class="section-label"># skills.json</div>
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="section-line"></div>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label"># about.me</div>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="row g-4 mb-5">
+        <div class="col-lg-8 fade-up">
+          <p style="color:var(--text-secondary);line-height:1.85;font-size:1.02rem;">
+            I'm a cybersecurity enthusiast who has completed SOC L1 training and is actively expanding expertise in
+            AI-powered security.
+            With hands-on experience in Python and Bash scripting, I build automation tools and security utilities that
+            solve real-world problems.
+            My passion lies at the intersection of <span style="color:var(--accent)">threat detection</span>,
+            <span style="color:var(--accent2)">machine learning</span>, and <span style="color:var(--accent3)">incident
+              response</span>.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fas fa-search"></i></div>
+            <h5>Threat Detection</h5>
+            <p>Monitoring SIEM dashboards, analyzing alerts, and identifying indicators of compromise in real time.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fas fa-robot"></i></div>
+            <h5>AI in Security</h5>
+            <p>Building ML-powered tools for anomaly detection, log parsing, and automated threat classification.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fas fa-terminal"></i></div>
+            <h5>Scripting & Automation</h5>
+            <p>Writing Python and Bash scripts to automate repetitive security tasks, parsing logs, and reporting.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="about-card">
+            <div class="about-card-icon"><i class="fas fa-fire-extinguisher"></i></div>
+            <h5>Incident Response</h5>
+            <p>Triaging alerts, documenting incidents, and coordinating containment steps following IR playbooks.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="skill-category-title"><i class="fas fa-shield-alt me-2"></i>SOC & Security</div>
-        <div>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>Splunk</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>IBM QRadar</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>Wazuh</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>Wireshark</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>Nmap</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>Metasploit</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>MITRE ATT&CK</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>Incident Response</span>
-        </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label"># skills.json</div>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-line"></div>
       </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="skill-category-title"><i class="fas fa-code me-2"></i>Programming</div>
-        <div>
-          <span class="skill-badge"><i class="fab fa-python"></i>Python</span>
-          <span class="skill-badge"><i class="fas fa-terminal"></i>Bash</span>
-          <!-- <span class="skill-badge"><i class="fas fa-database"></i>SQL</span> -->
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>Regex</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>JSON/YAML</span>
-          <span class="skill-badge"><i class="fas fa-circle-dot"></i>Git</span>
-          <span class="skill-badge"><i class="fab fa-linux"></i>Linux</span>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="skill-category-title"><i class="fas fa-shield-alt me-2"></i>SOC & Security</div>
+          <div>
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>Splunk</span>
+            <!-- <span class="skill-badge"><i class="fas fa-circle-dot"></i>IBM QRadar</span> -->
+            <!-- <span class="skill-badge"><i class="fas fa-circle-dot"></i>Wazuh</span> -->
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>Wireshark</span>
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>Nmap</span>
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>Metasploit</span>
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>MITRE ATT&CK</span>
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>Incident Response</span>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="skill-category-title"><i class="fas fa-code me-2"></i>Programming</div>
+          <div>
+            <span class="skill-badge"><i class="fab fa-python"></i>Python</span>
+            <span class="skill-badge"><i class="fas fa-terminal"></i>Bash</span>
+            <!-- <span class="skill-badge"><i class="fas fa-database"></i>SQL</span> -->
+            <!-- <span class="skill-badge"><i class="fas fa-circle-dot"></i>Regex</span> -->
+            <!-- <span class="skill-badge"><i class="fas fa-circle-dot"></i>JSON/YAML</span> -->
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>Git</span>
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>Github</span>
+            <span class="skill-badge"><i class="fab fa-linux"></i>Linux</span>
+          </div>
+        </div>
+        <!-- <div class="col-md-6 col-lg-4 fade-up">
         <div class="skill-category-title"><i class="fas fa-brain me-2"></i>AI / ML Security</div>
         <div>
           <span class="skill-badge"><i class="fas fa-circle-dot"></i>scikit-learn</span>
@@ -765,186 +215,192 @@
           <span class="skill-badge"><i class="fas fa-circle-dot"></i>LLM Integration</span>
           <span class="skill-badge"><i class="fas fa-circle-dot"></i>NLP for Threats</span>
         </div>
+      </div> -->
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="fade-up">
-      <div class="section-label"># projects.list</div>
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="section-line"></div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label"># projects.list</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="row g-4">
+
+        <!-- Project 1 -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-badge-bar">
+              <span class="proj-cat cat-soc">SOC</span>
+              <span class="proj-cat cat-py">Python</span>
+            </div>
+            <div class="project-body">
+              <h5><i class="fas fa-search-plus me-2" style="color:var(--accent)"></i>Log Analyzer Tool</h5>
+              <p>A Python-based log analysis tool that parses SIEM logs, detects suspicious patterns, and generates
+                automated threat reports with severity scoring.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Regex</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">JSON</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-badge-bar">
+              <span class="proj-cat cat-ai">AI</span>
+              <span class="proj-cat cat-py">Python</span>
+            </div>
+            <div class="project-body">
+              <h5><i class="fas fa-robot me-2" style="color:var(--accent4)"></i>AI Threat Classifier</h5>
+              <p>Machine learning model trained to classify network traffic and log events as benign or malicious using
+                anomaly detection algorithms.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">scikit-learn</span>
+                <span class="tech-tag">ML</span>
+                <span class="tech-tag">CSV Logs</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-badge-bar">
+              <span class="proj-cat cat-soc">SOC</span>
+              <span class="proj-cat cat-py">Bash</span>
+            </div>
+            <div class="project-body">
+              <h5><i class="fas fa-bell me-2" style="color:var(--accent2)"></i>Alert Automation Script</h5>
+              <p>Bash automation script that integrates with SIEM to auto-triage low severity alerts, reducing manual
+                analyst workload by filtering false positives.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Bash</span>
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">SIEM API</span>
+                <span class="tech-tag">Cron</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-badge-bar">
+              <span class="proj-cat cat-ai">AI</span>
+              <span class="proj-cat cat-soc">Security</span>
+            </div>
+            <div class="project-body">
+              <h5><i class="fas fa-comment-dots me-2" style="color:var(--accent5)"></i>LLM Security Chatbot</h5>
+              <p>AI-powered chatbot using LLM APIs that answers cybersecurity questions, suggests incident response
+                steps, and explains MITRE ATT&CK techniques.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">LLM</span>
+                <span class="tech-tag">Flask</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-badge-bar">
+              <span class="proj-cat cat-py">Python</span>
+              <span class="proj-cat cat-soc">Network</span>
+            </div>
+            <div class="project-body">
+              <h5><i class="fas fa-network-wired me-2" style="color:var(--accent)"></i>Network Scanner</h5>
+              <p>Python wrapper around Nmap that generates structured JSON reports of open ports, services, and
+                potential vulnerabilities for quick assessment.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Nmap</span>
+                <span class="tech-tag">Socket</span>
+                <span class="tech-tag">JSON</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-badge-bar">
+              <span class="proj-cat cat-ai">AI</span>
+              <span class="proj-cat cat-py">Python</span>
+            </div>
+            <div class="project-body">
+              <h5><i class="fas fa-chart-line me-2" style="color:var(--accent4)"></i>UEBA Dashboard</h5>
+              <p>User & Entity Behavior Analytics tool that builds baseline profiles and raises alerts when anomalous
+                user behavior is detected in access logs.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">ML</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="row g-4">
+  </section>
 
-      <!-- Project 1 -->
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="project-card">
-          <div class="project-badge-bar">
-            <span class="proj-cat cat-soc">SOC</span>
-            <span class="proj-cat cat-py">Python</span>
-          </div>
-          <div class="project-body">
-            <h5><i class="fas fa-search-plus me-2" style="color:var(--accent)"></i>Log Analyzer Tool</h5>
-            <p>A Python-based log analysis tool that parses SIEM logs, detects suspicious patterns, and generates automated threat reports with severity scoring.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Regex</span>
-              <span class="tech-tag">Pandas</span>
-              <span class="tech-tag">JSON</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-              <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label"># certifications</div>
+        <h2 class="section-title">Certifications & Courses</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="cert-info">
+              <h6>SOC Analyst L1</h6>
+              <span>Completed · 2026</span>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="project-card">
-          <div class="project-badge-bar">
-            <span class="proj-cat cat-ai">AI</span>
-            <span class="proj-cat cat-py">Python</span>
-          </div>
-          <div class="project-body">
-            <h5><i class="fas fa-robot me-2" style="color:var(--accent4)"></i>AI Threat Classifier</h5>
-            <p>Machine learning model trained to classify network traffic and log events as benign or malicious using anomaly detection algorithms.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">scikit-learn</span>
-              <span class="tech-tag">ML</span>
-              <span class="tech-tag">CSV Logs</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-              <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="project-card">
-          <div class="project-badge-bar">
-            <span class="proj-cat cat-soc">SOC</span>
-            <span class="proj-cat cat-py">Bash</span>
-          </div>
-          <div class="project-body">
-            <h5><i class="fas fa-bell me-2" style="color:var(--accent2)"></i>Alert Automation Script</h5>
-            <p>Bash automation script that integrates with SIEM to auto-triage low severity alerts, reducing manual analyst workload by filtering false positives.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Bash</span>
-              <span class="tech-tag">Linux</span>
-              <span class="tech-tag">SIEM API</span>
-              <span class="tech-tag">Cron</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="project-card">
-          <div class="project-badge-bar">
-            <span class="proj-cat cat-ai">AI</span>
-            <span class="proj-cat cat-soc">Security</span>
-          </div>
-          <div class="project-body">
-            <h5><i class="fas fa-comment-dots me-2" style="color:var(--accent5)"></i>LLM Security Chatbot</h5>
-            <p>AI-powered chatbot using LLM APIs that answers cybersecurity questions, suggests incident response steps, and explains MITRE ATT&CK techniques.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">OpenAI API</span>
-              <span class="tech-tag">LLM</span>
-              <span class="tech-tag">Flask</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-              <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="project-card">
-          <div class="project-badge-bar">
-            <span class="proj-cat cat-py">Python</span>
-            <span class="proj-cat cat-soc">Network</span>
-          </div>
-          <div class="project-body">
-            <h5><i class="fas fa-network-wired me-2" style="color:var(--accent)"></i>Network Scanner</h5>
-            <p>Python wrapper around Nmap that generates structured JSON reports of open ports, services, and potential vulnerabilities for quick assessment.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Nmap</span>
-              <span class="tech-tag">Socket</span>
-              <span class="tech-tag">JSON</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6 -->
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="project-card">
-          <div class="project-badge-bar">
-            <span class="proj-cat cat-ai">AI</span>
-            <span class="proj-cat cat-py">Python</span>
-          </div>
-          <div class="project-body">
-            <h5><i class="fas fa-chart-line me-2" style="color:var(--accent4)"></i>UEBA Dashboard</h5>
-            <p>User & Entity Behavior Analytics tool that builds baseline profiles and raises alerts when anomalous user behavior is detected in access logs.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Pandas</span>
-              <span class="tech-tag">Matplotlib</span>
-              <span class="tech-tag">ML</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-              <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certs">
-  <div class="container">
-    <div class="fade-up">
-      <div class="section-label"># certifications</div>
-      <h2 class="section-title">Certifications & Courses</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="row g-3">
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="cert-card">
-          <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
-          <div class="cert-info">
-            <h6>SOC Analyst L1</h6>
-            <span>Completed · 2026</span>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="col-md-6 col-lg-4 fade-up">
+        <!-- <div class="col-md-6 col-lg-4 fade-up">
         <div class="cert-card">
           <div class="cert-icon"><i class="fas fa-brain"></i></div>
           <div class="cert-info">
@@ -953,213 +409,234 @@
           </div>
         </div>
       </div> -->
-      <div class="col-md-6 col-lg-4 fade-up">
-  <div class="cert-card d-flex justify-content-between align-items-start gap-3">
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="cert-card d-flex justify-content-between align-items-center gap-3">
 
-    <!-- Left Content -->
-    <div class="cert-info">
-      <div class="cert-icon mb-2">
-        <i class="fas fa-brain"></i>
-      </div>
+            <!-- Left Content -->
+            <div class="cert-info">
+              <div class="cert-icon mb-2">
+                <i class="fas fa-brain"></i>
+              </div>
 
-      <h6>Cybersecurity with AI</h6>
-      <span>Completed · 2026</span>
-      <br><span> <a href="images/Cyber_Security_with_AI_Training_Certificate_of_Completion.pdf" target="_blank">
-    View Certificate
-</a></span>
-    </div>
+              <h6>Cybersecurity with AI</h6>
+              <span>Certified · 2026</span>
+            </div>
 
-    <!-- Right Side PDF Preview -->
-    <div class="cert-preview">
-      <embed 
-        src="images/Cyber_Security_with_AI_Training_Certificate_of_Completion.pdf"
-        type="application/pdf"
-        width="120"
-        height="150"
-      >
-    </div>
-   
-  </div>
-  
-</div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="cert-card">
-          <div class="cert-icon"><i class="fab fa-python"></i></div>
-          <div class="cert-info">
-            <h6>Python for Security</h6>
-            <span>Completed · 2026</span>
-            </span>
+            <!-- Right Side PDF -->
+            <div class="d-flex gap-3 flex-wrap">
+              <i class="fas fa-file-pdf fa-4x" style="margin-left: 45%;"></i>
+              <br>
+               
+              <a  href="images/Cyber_Security_with_AI_Training_Certificate_of_Completion.pdf" target="_blank"
+                class="btn-outline-custom" style="font-size: 12px; text-align: right; padding: 4%; margin-left: 25%;">
+                View Certificate
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fab fa-python"></i></div>
+            <div class="cert-info">
+              <h6>Python for Security</h6>
+              <span>Completed · 2026</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-terminal"></i></div>
+            <div class="cert-info">
+              <h6>Linux & Bash Scripting</h6>
+              <span>Completed · 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+            <div class="cert-info">
+              <h6>Networking Fundamentals</h6>
+              <span>Add your cert here</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-plus"></i></div>
+            <div class="cert-info">
+              <h6>Add Certificate</h6>
+              <span>Your next achievement</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="cert-card">
-          <div class="cert-icon"><i class="fas fa-terminal"></i></div>
-          <div class="cert-info">
-            <h6>Linux & Bash Scripting</h6>
-            <span>Completed · 2026</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label"># experience.log</div>
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6 fade-up">
+          <h5
+            style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--accent3);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;">
+            <i class="fas fa-briefcase me-2"></i>Experience
+          </h5>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2026 – Present</div>
+            <div class="timeline-title">Cybersecurity Learner / Freelance</div>
+            <div class="timeline-company">Self-Directed | Remote</div>
+            <ul class="timeline-desc" style="padding-left:16px;">
+              <li>Built 3+ security projects using Python, Bash, and AI/ML</li>
+              <li>Completed SOC L1 training with hands-on SIEM practice</li>
+              <li>Actively learning threat hunting and malware analysis</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Add your internship/job here</div>
+            <div class="timeline-title">Your Role Title</div>
+            <div class="timeline-company">Company Name | Location</div>
+            <ul class="timeline-desc" style="padding-left:16px;">
+              <li>Describe your responsibilities here</li>
+              <li>Add key achievements or learnings</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-up">
+          <h5
+            style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--accent2);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;">
+            <i class="fas fa-graduation-cap me-2"></i>Education
+          </h5>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 10px var(--accent2)"></div>
+            <div class="timeline-date">Your Year</div>
+            <div class="timeline-title">Your Degree / Course</div>
+            <div class="timeline-company">Your College/Institute · City</div>
+            <div class="timeline-desc">Add relevant coursework, percentage/CGPA, or achievements.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--accent4);box-shadow:0 0 10px var(--accent4)"></div>
+            <div class="timeline-date">Your Year</div>
+            <div class="timeline-title">12th / Secondary Education</div>
+            <div class="timeline-company">Your School · City</div>
+            <div class="timeline-desc">Add board, percentage, and relevant subjects here.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--accent4);box-shadow:0 0 10px var(--accent4)"></div>
+            <div class="timeline-date">Your Year</div>
+            <div class="timeline-title">10th / Secondary Education</div>
+            <div class="timeline-company">Your School · City</div>
+            <div class="timeline-desc">Add board, percentage, and relevant subjects here.</div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="cert-card">
-          <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
-          <div class="cert-info">
-            <h6>Networking Fundamentals</h6>
-            <span>Add your cert here</span>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="fade-up text-center mb-5">
+        <div class="section-label"># contact.sh</div>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-line mx-auto"></div>
+        <p style="color:var(--text-secondary);max-width:480px;margin:0 auto;">
+          Open to SOC analyst roles, internships, and cybersecurity collaborations. Let's connect!
+        </p>
       </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="cert-card">
-          <div class="cert-icon"><i class="fas fa-plus"></i></div>
-          <div class="cert-info">
-            <h6>Add Certificate</h6>
-            <span>Your next achievement</span>
-          </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-3 fade-up">
+          <a href="sujalkarnwal174@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h6>Email</h6>
+            <span>SujalKarnwal174@gmail.com</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 fade-up">
+          <a href="https://linkedin.com/in/sujal872" target="_blank" class="contact-card"
+            style="text-decoration:none;color:inherit;">
+            <i class="fab fa-linkedin"></i>
+            <h6>LinkedIn</h6>
+            <span>linkedin.com/in/Sujal872</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 fade-up">
+          <a href="https://github.com/sujal872" target="_blank" class="contact-card"
+            style="text-decoration:none;color:inherit;">
+            <i class="fab fa-github"></i>
+            <h6>GitHub</h6>
+            <span>github.com/Sujal872</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 fade-up">
+          <a href="https://tryhackme.com/p/Drac0Byte" target="_blank" class="contact-card"
+            style="text-decoration:none;color:inherit;">
+            <i class="fas fa-skull-crossbones"></i>
+            <h6>TryHackMe</h6>
+            <span>tryhackme.com/p/Drac0Byte</span>
+          </a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="fade-up">
-      <div class="section-label"># experience.log</div>
-      <h2 class="section-title">Experience & Education</h2>
-      <div class="section-line"></div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Designed & Built by <span style="color:var(--accent)">SUJAL</span> · 2026 · <span
+          style="color:var(--accent3)">Cyber</span><span style="color:var(--accent2)">security</span> Portfolio</p>
+      <p style="margin-top:6px;font-size:0.72rem;">Built with HTML · CSS · Bootstrap · JavaScript</p>
     </div>
-    <div class="row g-4">
-      <div class="col-lg-6 fade-up">
-        <h5 style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--accent3);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;">
-          <i class="fas fa-briefcase me-2"></i>Experience
-        </h5>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2026 – Present</div>
-          <div class="timeline-title">Cybersecurity Learner / Freelance</div>
-          <div class="timeline-company">Self-Directed | Remote</div>
-          <ul class="timeline-desc" style="padding-left:16px;">
-            <li>Built 3+ security projects using Python, Bash, and AI/ML</li>
-            <li>Completed SOC L1 training with hands-on SIEM practice</li>
-            <li>Actively learning threat hunting and malware analysis</li>
-          </ul>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Add your internship/job here</div>
-          <div class="timeline-title">Your Role Title</div>
-          <div class="timeline-company">Company Name | Location</div>
-          <ul class="timeline-desc" style="padding-left:16px;">
-            <li>Describe your responsibilities here</li>
-            <li>Add key achievements or learnings</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-6 fade-up">
-        <h5 style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--accent2);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;">
-          <i class="fas fa-graduation-cap me-2"></i>Education
-        </h5>
-        <div class="timeline-item">
-          <div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 10px var(--accent2)"></div>
-          <div class="timeline-date">Your Year</div>
-          <div class="timeline-title">Your Degree / Course</div>
-          <div class="timeline-company">Your College/Institute · City</div>
-          <div class="timeline-desc">Add relevant coursework, percentage/CGPA, or achievements.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot" style="background:var(--accent4);box-shadow:0 0 10px var(--accent4)"></div>
-          <div class="timeline-date">Your Year</div>
-          <div class="timeline-title">12th / Secondary Education</div>
-          <div class="timeline-company">Your School · City</div>
-          <div class="timeline-desc">Add board, percentage, and relevant subjects here.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="fade-up text-center mb-5">
-      <div class="section-label"># contact.sh</div>
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="section-line mx-auto"></div>
-      <p style="color:var(--text-secondary);max-width:480px;margin:0 auto;">
-        Open to SOC analyst roles, internships, and cybersecurity collaborations. Let's connect!
-      </p>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-6 col-md-3 fade-up">
-        <a href="sujalkarnwal174@gmail.com" class="contact-card">
-          <i class="fas fa-envelope"></i>
-          <h6>Email</h6>
-          <span>SujalKarnwal174@gmail.com</span>
-        </a>
-      </div>
-      <div class="col-6 col-md-3 fade-up">
-        <a href="https://linkedin.com/in/sujal872" target="_blank" class="contact-card" style="text-decoration:none;color:inherit;">
-          <i class="fab fa-linkedin"></i>
-          <h6>LinkedIn</h6>
-          <span>linkedin.com/in/Sujal872</span>
-        </a>
-      </div>
-      <div class="col-6 col-md-3 fade-up">
-        <a href="https://github.com/sujal872" target="_blank" class="contact-card" style="text-decoration:none;color:inherit;">
-          <i class="fab fa-github"></i>
-          <h6>GitHub</h6>
-          <span>github.com/Sujal872</span>
-        </a>
-      </div>
-      <div class="col-6 col-md-3 fade-up">
-        <a href="https://tryhackme.com/p/Drac0Byte" target="_blank" class="contact-card" style="text-decoration:none;color:inherit;">
-          <i class="fas fa-skull-crossbones"></i>
-          <h6>TryHackMe</h6>
-          <span>tryhackme.com/p/Drac0Byte</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Theme Toggle
+    const html = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <p>Designed & Built by <span style="color:var(--accent)">SUJAL</span> · 2026 · <span style="color:var(--accent3)">Cyber</span><span style="color:var(--accent2)">security</span> Portfolio</p>
-    <p style="margin-top:6px;font-size:0.72rem;">Built with HTML · CSS · Bootstrap · JavaScript</p>
-  </div>
-</footer>
+    // Default theme
+    html.setAttribute('data-theme', 'light');
+    icon.className = 'fas fa-moon'; // show moon because clicking will switch to dark
 
-<!-- SCRIPTS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Theme Toggle
-  const html = document.documentElement;
-  const btn  = document.getElementById('themeToggle');
-  const icon = document.getElementById('themeIcon');
+    btn.addEventListener('click', () => {
+      const isLight = html.getAttribute('data-theme') === 'light';
 
-  btn.addEventListener('click', () => {
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
-  });
+      html.setAttribute('data-theme', isLight ? 'dark' : 'light');
 
-  // Scroll fade-up animation
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Smooth scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      // Update icon
+      icon.className = isLight
+        ? 'fas fa-sun'   // dark mode active
+        : 'fas fa-moon'; // light mode active
     });
-  });
-</script>
+
+    // Scroll fade-up animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
 </body>
+
 </html>
