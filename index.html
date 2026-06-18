@@ -196,6 +196,9 @@
             <span class="skill-badge"><i class="fas fa-circle-dot"></i>Metasploit</span>
             <span class="skill-badge"><i class="fas fa-circle-dot"></i>MITRE ATT&CK</span>
             <span class="skill-badge"><i class="fas fa-circle-dot"></i>Incident Response</span>
+                <span class="skill-badge"><i class="fas fa-eye"></i> Security Monitoring</span>
+    <span class="skill-badge"><i class="fas fa-file-alt"></i> Log Analysis</span>
+    <span class="skill-badge"><i class="fas fa-search"></i> Incident Detection</span>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 fade-up">
@@ -206,11 +209,40 @@
             <!-- <span class="skill-badge"><i class="fas fa-database"></i>SQL</span> -->
             <!-- <span class="skill-badge"><i class="fas fa-circle-dot"></i>Regex</span> -->
             <!-- <span class="skill-badge"><i class="fas fa-circle-dot"></i>JSON/YAML</span> -->
+             <br><br>
+             <br>
+             <div class="skill-category-title"><i class="fas fa-code me-2"></i>Programming</div>
+          <div>
             <span class="skill-badge"><i class="fas fa-circle-dot"></i>Git</span>
             <span class="skill-badge"><i class="fas fa-circle-dot"></i>Github</span>
-            <span class="skill-badge"><i class="fab fa-linux"></i>Linux</span>
+            <span class="skill-badge"><i class="fas fa-circle-dot"></i>VS Code</span>
+            </div>
           </div>
         </div>
+        <!-- Cyber Security & Networking -->
+<div class="col-md-6 col-lg-4 fade-up">
+  <div class="skill-category-title">
+    <i class="fas fa-shield-alt me-2"></i>Cyber Security & Networking
+  </div>
+  <div>
+    <span class="skill-badge"><i class="fas fa-network-wired"></i> TCP/IP</span>
+    <span class="skill-badge"><i class="fas fa-globe"></i> DNS</span>
+    <span class="skill-badge"><i class="fas fa-lock"></i> HTTP/HTTPS</span>
+    <span class="skill-badge"><i class="fas fa-chart-line"></i> Network Traffic Analysis</span>
+    <span class="skill-badge"><i class="fas fa-user-secret"></i> Investigation</span>
+    <span class="skill-badge"><i class="fas fa-binoculars"></i> Reconnaissance</span>
+    <span class="skill-badge"><i class="fas fa-info-circle"></i> Information Gathering</span>
+    <br>
+    <br>
+    <br>
+    <div class="skill-category-title"><i class="fas fa-code me-2"></i>OPerating System / Platform</div>
+          <div>
+    <span class="skill-badge"><i class="fab fa-linux"></i> Linux</span>
+    <span class="skill-badge"><i class="fab fa-windows"></i> Windows</span>
+    <span class="skill-badge"><i class="fas fa-laptop-code"></i> TryHackMe</span>
+          </div>
+  </div>
+</div>
         <!-- <div class="col-md-6 col-lg-4 fade-up">
         <div class="skill-category-title"><i class="fas fa-brain me-2"></i>AI / ML Security</div>
         <div>
@@ -239,151 +271,116 @@
 
         <!-- Project 1 -->
         <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-badge-bar">
-              <span class="proj-cat cat-soc">SOC</span>
-              <span class="proj-cat cat-py">Python</span>
-            </div>
-            <div class="project-body">
-              <h5><i class="fas fa-search-plus me-2" style="color:var(--accent)"></i>Log Analyzer Tool</h5>
-              <p>A Python-based log analysis tool that parses SIEM logs, detects suspicious patterns, and generates
-                automated threat reports with severity scoring.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Regex</span>
-                <span class="tech-tag">Pandas</span>
-                <span class="tech-tag">JSON</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="project-card">
+    <div class="project-badge-bar">
+      <span class="proj-cat cat-soc">Cyber Security</span>
+      <span class="proj-cat cat-py">Python</span>
+    </div>
+
+    <div class="project-body">
+      <h5>
+        <i class="fas fa-globe me-2" style="color:var(--accent)"></i>
+        DomainHunter
+      </h5>
+
+      <p>
+        Developed a cybersecurity reconnaissance tool that automates domain intelligence gathering by analyzing WHOIS records, DNS configurations, SSL certificates, Reverse IP mappings, and blacklist status, enabling efficient security investigations and threat assessment.
+      </p>
+
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">WHOIS</span>
+        <span class="tech-tag">DNS</span>
+        <span class="tech-tag">SSL/TLS</span>
+        <span class="tech-tag">Socket</span>
+        <span class="tech-tag">JSON</span>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/sujal872/DomainHunter" target="_blank" class="proj-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
         <!-- Project 2 -->
         <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-badge-bar">
-              <span class="proj-cat cat-ai">AI</span>
-              <span class="proj-cat cat-py">Python</span>
-            </div>
-            <div class="project-body">
-              <h5><i class="fas fa-robot me-2" style="color:var(--accent4)"></i>AI Threat Classifier</h5>
-              <p>Machine learning model trained to classify network traffic and log events as benign or malicious using
-                anomaly detection algorithms.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">scikit-learn</span>
-                <span class="tech-tag">ML</span>
-                <span class="tech-tag">CSV Logs</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="project-card">
+    <div class="project-badge-bar">
+      <span class="proj-cat cat-soc">Networking</span>
+      <span class="proj-cat cat-py">Python</span>
+    </div>
+
+    <div class="project-body">
+      <h5>
+        <i class="fas fa-network-wired me-2" style="color:var(--accent4)"></i>
+        NetSpecter
+      </h5>
+
+      <p>
+        A Python-based network reconnaissance tool inspired by Nmap that performs TCP/UDP port
+        scanning, service enumeration, banner grabbing, and active host discovery to support
+        network security assessments.
+      </p>
+
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">TCP/UDP</span>
+        <span class="tech-tag">Socket Programming</span>
+        <span class="tech-tag">Multi-Threading</span>
+        <span class="tech-tag">Port Scanning</span>
+        <span class="tech-tag">Service Detection</span>
+      </div>
+
+      <div class="project-links">
+        <a href="YOUR_GITHUB_LINK" target="_blank" class="proj-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
         <!-- Project 3 -->
         <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-badge-bar">
-              <span class="proj-cat cat-soc">SOC</span>
-              <span class="proj-cat cat-py">Bash</span>
-            </div>
-            <div class="project-body">
-              <h5><i class="fas fa-bell me-2" style="color:var(--accent2)"></i>Alert Automation Script</h5>
-              <p>Bash automation script that integrates with SIEM to auto-triage low severity alerts, reducing manual
-                analyst workload by filtering false positives.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Bash</span>
-                <span class="tech-tag">Linux</span>
-                <span class="tech-tag">SIEM API</span>
-                <span class="tech-tag">Cron</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="project-card">
+    <div class="project-badge-bar">
+      <span class="proj-cat cat-soc">Cyber Security</span>
+      <span class="proj-cat cat-py">Python</span>
+      <span class="proj-cat" style="background:#f39c12;">In Progress</span>
+    </div>
 
-        <!-- Project 4 -->
-        <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-badge-bar">
-              <span class="proj-cat cat-ai">AI</span>
-              <span class="proj-cat cat-soc">Security</span>
-            </div>
-            <div class="project-body">
-              <h5><i class="fas fa-comment-dots me-2" style="color:var(--accent5)"></i>LLM Security Chatbot</h5>
-              <p>AI-powered chatbot using LLM APIs that answers cybersecurity questions, suggests incident response
-                steps, and explains MITRE ATT&CK techniques.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">OpenAI API</span>
-                <span class="tech-tag">LLM</span>
-                <span class="tech-tag">Flask</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="project-body">
+      <h5>
+        <i class="fas fa-shield-virus me-2" style="color:var(--accent)"></i>
+        PhishSentinel
+      </h5>
 
-        <!-- Project 5 -->
-        <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-badge-bar">
-              <span class="proj-cat cat-py">Python</span>
-              <span class="proj-cat cat-soc">Network</span>
-            </div>
-            <div class="project-body">
-              <h5><i class="fas fa-network-wired me-2" style="color:var(--accent)"></i>Network Scanner</h5>
-              <p>Python wrapper around Nmap that generates structured JSON reports of open ports, services, and
-                potential vulnerabilities for quick assessment.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Nmap</span>
-                <span class="tech-tag">Socket</span>
-                <span class="tech-tag">JSON</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <p>
+        An intelligent phishing detection tool currently under development that analyzes URLs,
+        emails, and websites to identify phishing indicators, evaluate domain credibility,
+        and generate risk scores for threat assessment and user protection.
+      </p>
 
-        <!-- Project 6 -->
-        <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-badge-bar">
-              <span class="proj-cat cat-ai">AI</span>
-              <span class="proj-cat cat-py">Python</span>
-            </div>
-            <div class="project-body">
-              <h5><i class="fas fa-chart-line me-2" style="color:var(--accent4)"></i>UEBA Dashboard</h5>
-              <p>User & Entity Behavior Analytics tool that builds baseline profiles and raises alerts when anomalous
-                user behavior is detected in access logs.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Pandas</span>
-                <span class="tech-tag">Matplotlib</span>
-                <span class="tech-tag">ML</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Phishing Detection</span>
+        <span class="tech-tag">URL Analysis</span>
+        <span class="tech-tag">Email Security</span>
+        <span class="tech-tag">Threat Intelligence</span>
+        <span class="tech-tag">Risk Scoring</span>
+      </div>
+
+      <div class="project-links">
+        <a href="#" class="proj-link">
+          <i class="fas fa-tools"></i> Under Development
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
       </div>
     </div>
@@ -399,51 +396,86 @@
       </div>
       <div class="row g-3">
         <div class="col-md-6 col-lg-4 fade-up">
-          <div class="cert-card">
-            <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
-            <div class="cert-info">
-              <h6>SOC Analyst L1</h6>
-              <span>Completed · 2026</span>
-            </div>
-          </div>
+  <div class="cert-card">
+    <div class="cert-icon">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+    <div class="cert-info">
+      <h6>SOC Analyst Level 1</h6>
+      <span>TryHackMe · Completed 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4 fade-up">
+  <div class="cert-card d-flex justify-content-between align-items-center gap-3">
+    <div class="cert-info">
+      <div class="cert-icon mb-2">
+        <i class="fas fa-brain"></i>
+      </div>
+
+      <h6>Cybersecurity with AI</h6>
+      <span>Internshala · Certified 2026</span>
+    </div>
+
+    <div class="d-flex gap-3 flex-wrap">
+      <i class="fas fa-file-pdf fa-4x" style="margin-left:45%;"></i>
+
+      <a href="images/Cyber_Security_with_AI_Training_Certificate_of_Completion.pdf"
+        target="_blank"
+        class="btn-outline-custom"
+        style="font-size:12px; text-align:right; padding:4%; margin-left:25%;">
+        View Certificate
+      </a>
+    </div>
+  </div>
+</div>
+
         </div>
+        <br>
+        <br>
+        <div class="fade-up">
+       <h2 class="section-title">Independent Learning & Skill Development</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="row g-3">
+      <div class="col-md-6 col-lg-4 fade-up">
+  <div class="cert-card">
+    <div class="cert-icon">
+      <i class="fab fa-python"></i>
+    </div>
+    <div class="cert-info">
+      <h6>Python for Cybersecurity</h6>
+      <span>Self-Learning & Hands-on Projects</span>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4 fade-up">
+  <div class="cert-card">
+    <div class="cert-icon">
+      <i class="fas fa-terminal"></i>
+    </div>
+    <div class="cert-info">
+      <h6>Linux & Bash Scripting</h6>
+      <span>Self-Learning & Practical Labs</span>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-4 fade-up">
+  <div class="cert-card">
+    <div class="cert-icon">
+      <i class="fas fa-network-wired"></i>
+    </div>
+    <div class="cert-info">
+      <h6>Networking Fundamentals</h6>
+      <span>Self-Learning & Practical Labs</span>
+    </div>
+  </div>
+</div>
+    </div>
         <!-- <div class="col-md-6 col-lg-4 fade-up">
-        <div class="cert-card">
-          <div class="cert-icon"><i class="fas fa-brain"></i></div>
-          <div class="cert-info">
-            <h6>Cybersecurity with AI</h6>
-            <span>Completed · 2026</span>
-          </div>
-        </div>
-      </div> -->
-        <div class="col-md-6 col-lg-4 fade-up">
-          <div class="cert-card d-flex justify-content-between align-items-center gap-3">
-
-            <!-- Left Content -->
-            <div class="cert-info">
-              <div class="cert-icon mb-2">
-                <i class="fas fa-brain"></i>
-              </div>
-
-              <h6>Cybersecurity with AI</h6>
-              <span>Certified · 2026</span>
-            </div>
-
-            <!-- Right Side PDF -->
-            <div class="d-flex gap-3 flex-wrap">
-              <i class="fas fa-file-pdf fa-4x" style="margin-left: 45%;"></i>
-              <br>
-
-              <a href="images/Cyber_Security_with_AI_Training_Certificate_of_Completion.pdf" target="_blank"
-                class="btn-outline-custom" style="font-size: 12px; text-align: right; padding: 4%; margin-left: 25%;">
-                View Certificate
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-        <div class="col-md-6 col-lg-4 fade-up">
           <div class="cert-card">
             <div class="cert-icon"><i class="fab fa-python"></i></div>
             <div class="cert-info">
@@ -470,8 +502,8 @@
               <span>Add your cert here</span>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4 fade-up">
+        </div> -->
+        <!-- <div class="col-md-6 col-lg-4 fade-up">
           <div class="cert-card">
             <div class="cert-icon"><i class="fas fa-plus"></i></div>
             <div class="cert-info">
@@ -479,7 +511,7 @@
               <span>Your next achievement</span>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -494,32 +526,36 @@
       </div>
       <div class="row g-4">
         <div class="col-lg-6 fade-up">
-          <h5
-            style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--accent3);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;">
-            <i class="fas fa-briefcase me-2"></i>Experience
-          </h5>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">2026 – Present</div>
-            <div class="timeline-title">Cybersecurity Learner / Freelance</div>
-            <div class="timeline-company">Self-Directed | Remote</div>
-            <ul class="timeline-desc" style="padding-left:16px;">
-              <li>Built 3+ security projects using Python, Bash, and AI/ML</li>
-              <li>Completed SOC L1 training with hands-on SIEM practice</li>
-              <li>Actively learning threat hunting and malware analysis</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">Add your internship/job here</div>
-            <div class="timeline-title">Your Role Title</div>
-            <div class="timeline-company">Company Name | Location</div>
-            <ul class="timeline-desc" style="padding-left:16px;">
-              <li>Describe your responsibilities here</li>
-              <li>Add key achievements or learnings</li>
-            </ul>
-          </div>
-        </div>
+  <h5
+    style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--accent3);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;">
+    <i class="fas fa-briefcase me-2"></i>Cybersecurity Training & Projects
+  </h5>
+
+  <div class="timeline-item">
+    <div class="timeline-dot"></div>
+    <div class="timeline-date">2026 – Present</div>
+    <div class="timeline-title">Aspiring SOC Analyst & Cybersecurity Enthusiast</div>
+    <div class="timeline-company">Self-Learning | Hands-on Labs & Projects</div>
+    <ul class="timeline-desc" style="padding-left:16px;">
+      <li>Completed SOC Analyst Level 1 training on TryHackMe.</li>
+      <li>Completed Cybersecurity with AI training from Internshala.</li>
+      <li>Built cybersecurity tools including DomainHunter and NetSpecter using Python.</li>
+      <li>Gained hands-on experience in networking, reconnaissance, log analysis, and threat detection.</li>
+      <li>Actively exploring SOC operations, incident investigation, and security monitoring.</li>
+    </ul>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-dot"></div>
+    <div class="timeline-date">Currently Seeking Opportunities</div>
+    <div class="timeline-title">SOC Analyst / Cybersecurity Analyst Intern</div>
+    <div class="timeline-company">Delhi NCR / Noida | Open to Internship & Full-Time Roles</div>
+    <ul class="timeline-desc" style="padding-left:16px;">
+      <li>Looking for opportunities to apply cybersecurity and SOC skills in a professional environment.</li>
+      <li>Interested in Security Operations, Threat Detection, Incident Response, and Network Security.</li>
+    </ul>
+  </div>
+</div>
         <div class="col-lg-6 fade-up">
           <h5
             style="font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--accent2);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;">
@@ -527,24 +563,24 @@
           </h5>
           <div class="timeline-item">
             <div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 10px var(--accent2)"></div>
-            <div class="timeline-date">Your Year</div>
-            <div class="timeline-title">Your Degree / Course</div>
-            <div class="timeline-company">Your College/Institute · City</div>
-            <div class="timeline-desc">Add relevant coursework, percentage/CGPA, or achievements.</div>
+            <div class="timeline-date">2026</div>
+            <div class="timeline-title">Bachelor of Computer Applications (BCA)</div>
+            <div class="timeline-company">Maa Shakumbhari University</div>
+            <div class="timeline-desc">CGPA : 7.27</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot" style="background:var(--accent4);box-shadow:0 0 10px var(--accent4)"></div>
-            <div class="timeline-date">Your Year</div>
-            <div class="timeline-title">12th / Secondary Education</div>
-            <div class="timeline-company">Your School · City</div>
-            <div class="timeline-desc">Add board, percentage, and relevant subjects here.</div>
+            <div class="timeline-date">2023</div>
+            <div class="timeline-title">12th</div>
+            <div class="timeline-company">Kisan Inter College Kakrauli Muzaffarnagar</div>
+            <div class="timeline-desc">Percentage : 71%</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot" style="background:var(--accent4);box-shadow:0 0 10px var(--accent4)"></div>
-            <div class="timeline-date">Your Year</div>
-            <div class="timeline-title">10th / Secondary Education</div>
-            <div class="timeline-company">Your School · City</div>
-            <div class="timeline-desc">Add board, percentage, and relevant subjects here.</div>
+            <div class="timeline-date">2021</div>
+            <div class="timeline-title">10th</div>
+            <div class="timeline-company">SD Public JR High School Muzaffarnagar</div>
+            <div class="timeline-desc">Percentage : 81.4%</div>
           </div>
         </div>
       </div>
@@ -564,14 +600,17 @@
       </div>
       <div class="row g-4 justify-content-center">
         <div class="col-6 col-md-3 fade-up">
-          <a href="sujalkarnwal174@gmail.com" class="contact-card">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sujalkarnwal174@gmail.com"
+   target="_blank"
+   class="contact-card">
             <i class="fas fa-envelope"></i>
             <h6>Email</h6>
             <span>SujalKarnwal174@gmail.com</span>
           </a>
+          
         </div>
         <div class="col-6 col-md-3 fade-up">
-          <a href="https://linkedin.com/in/sujal872" target="_blank" class="contact-card"
+          <a href="https://www.linkedin.com/in/sujal-karnwal-1978113a0" target="_blank" class="contact-card"
             style="text-decoration:none;color:inherit;">
             <i class="fab fa-linkedin"></i>
             <h6>LinkedIn</h6>
@@ -602,8 +641,9 @@
   <footer>
     <div class="container">
       <p>Designed & Built by <span style="color:var(--accent)">SUJAL</span> · 2026 · <span
-          style="color:var(--accent3)">Cyber</span><span style="color:var(--accent2)">security</span> Portfolio</p>
-      <p style="margin-top:6px;font-size:0.72rem;">Built with HTML · CSS · Bootstrap · JavaScript</p>
+          style="color:var(--accent3)">Cyber</span><span style="color:var(--accent2)">security</span> Portfolio All Rights Reserved.</p>
+          
+      <!-- <p style="margin-top:6px;font-size:0.72rem;">Built with HTML · CSS · Bootstrap · JavaScript</p> -->
     </div>
   </footer>
 
